@@ -842,7 +842,7 @@ body {
 /* Hide only text spans when collapsed */
 .sidebar.collapsed .menu-text,
 .sidebar.collapsed .arrow {
-    display: none;
+    display: none !important;
 }
 
 /* Keep menu icons visible and in position */
@@ -1698,4 +1698,45 @@ body {
     object-fit: contain;
     margin-left: 10px;
     max-width: none; /* Remove max-width constraint */
+}
+
+.attendance-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.attendance-table th,
+.attendance-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.attendance-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #333;
+}
+
+.attendance-table tr:hover {
+    background-color: #f5f5f5;
+}
+
+.settings-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+/* Attendance modal styles */
+.attendance-modal-content {
+    width: 80%; /* Larger width for the attendance modal */
+    max-width: 1200px; /* Maximum width */
+    height: 80%; /* Height to accommodate the table */
+    overflow-y: auto; /* Add scrolling if content is too long */
+}
+
+.attendance-table-container {
+    padding: 20px;
 }

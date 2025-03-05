@@ -408,6 +408,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Initial table update with current year
     updateTableDates(currentMonth + 1, currentYear);
+
+    // Handle Attendance button click
+    const attendanceBtn = document.querySelector('.clock-btn');
+    const attendanceModal = document.getElementById('attendanceModal');
+    const closeAttendanceBtn = attendanceModal.querySelector('.close-modal');
+    const attendanceDate = document.getElementById('attendance-date');
+
+    attendanceBtn.addEventListener('click', function () {
+        // Show Attendance modal
+        attendanceModal.classList.add('show');
+
+        // Update date
+        const today = new Date();
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        attendanceDate.textContent = today.toLocaleDateString(undefined, options);
+    });
+
+    // Close Attendance modal
+    closeAttendanceBtn.addEventListener('click', function () {
+        attendanceModal.classList.remove('show');
+    });
+
+    // Close Attendance modal when clicking outside
+    attendanceModal.addEventListener('click', function (e) {
+        if (e.target === attendanceModal) {
+            attendanceModal.classList.remove('show');
+        }
+    });
 });
 
 // Add this to your existing script.js
