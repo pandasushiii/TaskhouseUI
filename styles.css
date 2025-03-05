@@ -272,6 +272,45 @@ body {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);  /* Larger shadow when floating */
 }
 
+.performance-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.performance-card h4 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.performance-card .percentage {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4caf50; /* Green color for percentage */
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 20px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.progress {
+    background-color: #4caf50; /* Green color for progress */
+    height: 100%;
+    width: 0;
+    transition: width 0.3s ease;
+}
+
 .percentage {
     font-size: 28px;
     font-weight: bold;
