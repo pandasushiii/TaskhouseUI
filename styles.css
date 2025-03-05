@@ -1286,41 +1286,52 @@ body {
 
 /* Modal styles */
 .modal {
-    display: none;
+    display: none; /* Hidden by default */
     position: fixed;
-    top: 0;
+    z-index: 1000;
     left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .modal.show {
-    display: flex;
+    display: flex; /* Show modal when .show class is added */
 }
 
 .modal-content {
-    background: white;
-    padding: 25px;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 800px;
     border-radius: 8px;
-    width: 500px;
-    max-width: 90%;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.attendance-modal-content {
+    width: 80%; /* Larger width for the attendance modal */
+    max-width: 1200px; /* Maximum width */
+    height: 80%; /* Height to accommodate the table */
+    overflow-y: auto; /* Add scrolling if content is too long */
 }
 
 .modal-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
 }
 
 .modal-header h3 {
     margin: 0;
-    color: #1d4e89;
+    color: #333;
 }
 
 .close-modal {
@@ -1328,112 +1339,41 @@ body {
     border: none;
     font-size: 24px;
     cursor: pointer;
-    color: #666;
-}
-
-/* Form styles */
-.task-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.form-group label {
-    font-weight: 500;
     color: #333;
 }
 
-.form-group input,
-.form-group textarea {
-    padding: 8px 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 14px;
+.attendance-table-container {
+    padding: 20px;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
-    border-color: #2a7a8c;
-    outline: none;
-}
-
-.billed-hours .time-inputs {
-    display: flex;
-    gap: 10px;
-}
-
-.time-inputs input {
-    width: 100px;
-}
-
-.form-actions {
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.submit-btn {
-    background-color: #2a7a8c;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.cancel-btn {
-    background-color: #f0f0f0;
-    color: #333;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.submit-btn:hover {
-    background-color: #236778;
-}
-
-.cancel-btn:hover {
-    background-color: #e4e4e4;
-}
-
-/* Priority select styles */
-.priority-select {
-    padding: 8px 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 14px;
+.attendance-table {
     width: 100%;
-    background-color: white;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff; /* Ensure table background is white */
+}
+
+.attendance-table th,
+.attendance-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    color: #333; /* Text color */
+}
+
+.attendance-table th {
+    background-color: #f8f9fa; /* Light grey background for headers */
+    font-weight: 600;
+}
+
+.attendance-table tr:hover {
+    background-color: #f5f5f5; /* Light grey background on hover */
+}
+
+.settings-icon {
+    width: 20px;
+    height: 20px;
     cursor: pointer;
-    transition: border-color 0.2s;
-}
-
-.priority-select:focus {
-    border-color: #2a7a8c;
-    outline: none;
-}
-
-.priority-select:hover {
-    border-color: #2a7a8c;
-}
-
-/* Style the dropdown arrow */
-.priority-select {
-    appearance: none;
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-    background-repeat: no-repeat;
-    background-position: right 8px center;
-    background-size: 16px;
-    padding-right: 32px;
 }
 
 /* VA Table Container */
