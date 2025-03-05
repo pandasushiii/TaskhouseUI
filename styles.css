@@ -1350,6 +1350,11 @@ body {
     max-width: 1200px; /* Maximum width */
     height: 80%; /* Height to accommodate the table */
     overflow-y: auto; /* Add scrolling if content is too long */
+    background-color: #fff; /* Ensure modal background is white */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1001; /* Ensure it overlays other content */
 }
 
 .modal-header {
@@ -1456,13 +1461,13 @@ body {
 }
 
 .submit-btn {
-    background-color: #4caf50;
-    color: #fff;
+    background-color: #1d4e89; /* Match the website's primary color */
+    color: white;
 }
 
 .cancel-btn {
-    background-color: #f44336;
-    color: #fff;
+    background-color: #f44336; /* Match the website's secondary color */
+    color: white;
 }
 
 /* VA Table Container */
